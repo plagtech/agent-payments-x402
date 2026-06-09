@@ -1,14 +1,14 @@
 ---
 name: Agent Payments
-description: Batch payments, payroll, invoicing, and escrow for AI agents on Base and 7 other EVM chains. Send USDC to many recipients in one transaction, run stablecoin payroll, create payment-gated invoices, and lock funds in on-chain escrow. Pay-per-call via x402 — no API keys, no accounts. Powered by Spraay Protocol.
+description: Batch payments for AI agents across Base and additional EVM chains, plus payroll, invoicing, and escrow on Base. Send USDC to many recipients in one transaction, run stablecoin payroll, create payment-gated invoices, and lock funds in on-chain escrow. Pay-per-call via x402 — no API keys, no accounts. Powered by Spraay Protocol.
 license: MIT
 version: 1.0.0
-homepage: https://github.com/plagtech/spraay-skills
+homepage: https://github.com/plagtech/agent-payments-x402
 ---
 
 # Agent Payments
 
-Move money on-chain from an agent without writing contract code. This skill wraps the **Spraay x402 Gateway** (`gateway.spraay.app`) — batch disbursement, payroll, invoicing, and escrow primitives that settle in USDC on Base and 7 other EVM chains. Every call is paid per-use with the x402 protocol, so there are no API keys, accounts, or subscriptions.
+Move money on-chain from an agent without writing contract code. This skill wraps the **Spraay x402 Gateway** (`gateway.spraay.app`) — batch disbursement across Base and additional EVM chains, plus payroll, invoicing, and escrow on Base. Every call is paid per-use with the x402 protocol, so there are no API keys, accounts, or subscriptions.
 
 The batch and payroll endpoints implement **Batch Payments for Agents (BPA) 1.0**, an open settlement spec: https://docs.spraay.app/bpa/1.0/
 
@@ -103,6 +103,6 @@ const invoice = await client.post("/api/v1/invoice/create", {
 ```
 
 ## Notes
-- Settlement is USDC on Base by default; batch supports 8 EVM chains.
+- Settlement is USDC on Base by default. Multi-chain support applies to batch payments only (the chains listed in the batch row above); payroll, invoicing, and escrow settle on Base.
 - Spraay batch contract on Base: `0x1646452F98E36A3c9Cfc3eDD8868221E207B5eEC`
 - Full catalog: https://docs.spraay.app · Live traffic: https://live.spraay.app
